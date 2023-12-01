@@ -1,0 +1,17 @@
+<%= form_with model: @post do |f| %>
+  <div>
+    <%= f.label :title, 'Title', style: "display:block" %>
+    <%= f.text_field :title %>
+    <% @post.errors.full_messages_for(:title).each do |message|  %>
+      <div><%= message %></div>
+    <% end  %>
+  </div>
+  <div>
+    <%= f.label :body, 'Content', style: "display:block" %>
+    <%= f.text_area :body %>
+    <% @post.errors.full_messages_for(:body).each do |message|  %>
+      <div><%= message %></div>
+    <% end  %>
+  </div>
+  <%= f.submit %>
+<% end %>
